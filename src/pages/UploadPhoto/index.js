@@ -1,12 +1,14 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React from 'react'
+import React, {useState} from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
-import { IconAddPhoto, ILNullPhoto } from '../../assets';
+import { IconAddPhoto, IconRemovePhoto, ILNullPhoto } from '../../assets';
 import { Button, Gap, Header, Link } from '../../components';
 import { colors, fonts } from '../../utils';
 
 
 const UploadPhoto = ({navigation}) => {
+    const [hasPhoto, setHasPhoto] = useState(false);
+
     return (
         <View style={styles.page}>
             <Header title="Upload Photo" />
@@ -14,13 +16,18 @@ const UploadPhoto = ({navigation}) => {
                 <View style={styles.profile}>
                     <View style={styles.avatarWrapper}>
                     <Image source={ILNullPhoto} style={styles.avatar} />
-                    <IconAddPhoto style={styles.addPhoto} />
+                    {
+                        hasPhoto && <IconRemovePhoto style={styles.addPhoto} />
+                    }
+                    {
+                        !hasPhoto && <IconAddPhoto style={styles.addPhoto} />
+                    }
                     </View>
                     <Text style={styles.name}>Valin Fernanda</Text>
                     <Text style={styles.profession}>Future Mobile Developer</Text>
                 </View>
                 <View>
-                    <Button title="Upload and Continue" onPress={()=>navigation.replace('MainApp')}/>
+                    <Button disable title="Upload and Continue" onPress={()=>navigation.replace('MainApp')}/>
                     <Gap height={30} />
                     <Link title="Skip for this" align="center" size={16} onPress={()=>navigation.replace('MainApp')} />
                 </View>

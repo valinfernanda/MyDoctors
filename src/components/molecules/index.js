@@ -9,7 +9,8 @@ import ListHospital from './ListHospital';
 import ChatItem from './ChatItem';
 import InputChat from './InputChat';
 import Profile from './Profile';
-import ProfileItem from './ProfileItem'
+import ProfileItem from './ProfileItem';
+import Loading from './Loading';
 
 export {Header, BottomNavigator, HomeProfile, DoctorCategory, RatedDoctor, NewsItem, List, ListHospital, ChatItem, InputChat, 
-        ProfileItem, Profile}; 
+        ProfileItem, Profile, Loading}; 
