@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { IconBackLight, IconSendDark, IconSendLight } from '../../../assets'
 import { colors } from '../../../utils'
 
-const BtnIcon = ({disable}) => {
+const BtnIconSend = ({disable}) => {
     return (
         <View style={styles.container(disable)}>
         {disable && <IconSendDark />}
@@ -11,7 +11,7 @@ const BtnIcon = ({disable}) => {
         </View>
     )
 }
-export default BtnIcon;
+export default BtnIconSend;
 
 const styles = StyleSheet.create({
     container: (disable) => (

@@ -1,13 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler';
 import { DummyDoctor1, DummyDoctor3, DummyDoctor2, JSONCategoryDoctor } from '../../assets';
 import { DoctorCategory, Gap, HomeProfile, NewsItem, RatedDoctor } from '../../components';
-import { colors, fonts } from '../../utils';
+import { colors, fonts, getData } from '../../utils';
 
 
 
 const Doctor = ({navigation}) => {
+    
     return (
         <View style={styles.page}>
             <View style={styles.content}>
